@@ -1,3 +1,10 @@
+//Capturo mis botones de mi aside de navegación.
+const btnFinalProject = document.getElementById("btnFinalProject");
+const btnLogin = document.getElementById("btnLogIn");
+const btnCards = document.getElementById("btnCards");
+
+
+
 const btnToggle = document.getElementById("btnToggler");
 const body = document.getElementById("finalProject--grid");
 
@@ -11,8 +18,8 @@ btnToggle.addEventListener("click", () => {
     }
 })
 
-//A tráves de un botón, creo el apartado del LogIn.
-const btnLogin = document.getElementById("btnLogIn");
+
+
 const containerLogIn = document.querySelector(".main__login");
 
 btnLogin.addEventListener("click", () => {
