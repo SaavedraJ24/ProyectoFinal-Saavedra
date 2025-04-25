@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+label{
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
 p {
     font-family: "Kanit", sans-serif;
     font-weight: 200;
@@ -16,7 +22,11 @@ ul {
 }
 
 li {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
     list-style: none;
+    color: var(--text);
 }
 
 :root {
@@ -29,17 +39,6 @@ li {
     --button: ;
     --hover: ;
 }
-
-/* .dc-theme {
-    --background: rgb(36, 36, 36);
-    --header: rgb(165, 24, 24);
-    --footer: #111111;
-    --aside: #013220;
-    --titulo: #F1C40F;
-    --text: #F5F5F5;
-    --button: #27AE60;
-    --hover: #2ECC71;
-} */
 
 .dc-theme {
     --background: #1a1a1a;
@@ -80,6 +79,7 @@ h6 {
     font-family: "Bangers", system-ui;
     font-weight: 400;
     font-style: normal;
+    color: var(--text);
 }
 
 #finalProject--grid {
@@ -87,7 +87,7 @@ h6 {
     grid-template-areas:
         "header header  "
         "aside  main    "
-        "footer footer  "
+        "aside footer  "
     ;
     grid-template-columns: 25% 75%;
     grid-template-rows: auto auto auto;
@@ -102,6 +102,11 @@ h6 {
     height: 100px;
 }
 
+.header a{
+    text-decoration: none;
+    align-content: center;
+}
+
 .header div {
     align-content: center;
     margin-right: 0.5em;
@@ -112,7 +117,6 @@ h6 {
     font-size: 75px;
     color: var(--titulo);
     margin-left: 0.5em;
-    align-content: center;
 }
 
 /*   Estilo boton toggler    */
@@ -318,11 +322,70 @@ h6 {
     min-height: 100vh;
 }
 
+.main h2{
+    font-size: 40px;
+    text-align: center;
+    margin: 0.5em 0 0.8em;
+}
+
+.main--assignment{
+    display: flex;
+    flex-direction: row;
+}
+
+.main--assignment section{
+    margin: 0.2em 1.4em 0.2em 1.1em;
+}
+
+.main--assignment section article ul{
+    margin-left: 0.4em;
+}
+
+.main--assignment section article ul li{
+    list-style: inside;
+    color: var(--background);
+}
+
+.main--assignment h4{
+    font-size: 24px;
+    color: var(--background);
+}
+
+.main--assignment h5{
+    font-size: 22px;
+    margin: 0.2em 0 0.4em;
+    color: var(--background);
+}
+
+.main--assignment h3{
+    font-size: 28px;
+    margin: 0 0 0.6em;
+    color: var(--background);
+}
+
+.main--assignment p{
+    font-size: 18px;
+    margin: 0.1em 0 0.4em;
+    color: var(--background);
+}
+
+/*Estilo*/
+/*From Uiverse.io by adamgiebl */
+.card {
+    padding: 0.5em 0.3em;
+    width: 100%;
+    height: auto;
+    background: var(--button);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+
 .footer {
     grid-area: footer;
     display: flex;
     background-color: var(--footer);
-    margin-top: auto;
+    margin-top: 0.2em;
     justify-content: center;
     height: 100px;
     align-items: center;
@@ -341,21 +404,27 @@ h6 {
     flex-direction: column;
     gap: 10px;
     max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
+    background-color: var(--aside);
+    padding: 30px;
     border-radius: 20px;
     position: relative;
+    justify-self: center;
+    margin: 4.6em 3.2em;
 }
 
 .title {
     font-size: 28px;
-    color: royalblue;
+    color: var(--titulo);
     font-weight: 600;
     letter-spacing: -1px;
     position: relative;
     display: flex;
     align-items: center;
     padding-left: 30px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 .title::before,
@@ -366,13 +435,13 @@ h6 {
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: royalblue;
+    background-color: var(--titulo);
 }
 
 .title::before {
     width: 18px;
     height: 18px;
-    background-color: royalblue;
+    background-color: var(--titulo);
 }
 
 .title::after {
@@ -383,8 +452,8 @@ h6 {
 
 .message,
 .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
+    color: var(--black);
+    font-size: 16px;
 }
 
 .signin {
@@ -392,17 +461,17 @@ h6 {
 }
 
 .signin a {
-    color: royalblue;
+    color: var(--footer);
 }
 
 .signin a:hover {
-    text-decoration: underline royalblue;
+    text-decoration: underline var(--hover);
 }
 
 .flex {
     display: flex;
     width: 100%;
-    gap: 6px;
+    gap: 24px;
 }
 
 .form label {
@@ -421,7 +490,7 @@ h6 {
     position: absolute;
     left: 10px;
     top: 15px;
-    color: grey;
+    color: black;
     font-size: 0.9em;
     cursor: text;
     transition: 0.3s ease;
@@ -446,7 +515,7 @@ h6 {
 .submit {
     border: none;
     outline: none;
-    background-color: royalblue;
+    background-color: #B30000;
     padding: 10px;
     border-radius: 10px;
     color: #fff;
@@ -455,7 +524,7 @@ h6 {
 }
 
 .submit:hover {
-    background-color: rgb(56, 90, 194);
+    background-color: #cd0000ce;
 }
 
 @keyframes pulse {
