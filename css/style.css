@@ -1,0 +1,471 @@
+/*Resets*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--text);
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+    --background: ;
+    --header: ;
+    --footer: ;
+    --aside: ;
+    --titulo: ;
+    --text: ;
+    --button: ;
+    --hover: ;
+}
+
+/* .dc-theme {
+    --background: rgb(36, 36, 36);
+    --header: rgb(165, 24, 24);
+    --footer: #111111;
+    --aside: #013220;
+    --titulo: #F1C40F;
+    --text: #F5F5F5;
+    --button: #27AE60;
+    --hover: #2ECC71;
+} */
+
+.dc-theme {
+    --background: #1a1a1a;
+    /* Gotham vibes */
+    --header: #14532d;
+    /* Verde bosque profundo para el header */
+    --footer: #0d0d0d;
+    /* Fondo bien oscuro para el footer */
+    --aside: #166534;
+    /* Otro tono de verde oscuro, complementario */
+    --titulo: #facc15;
+    /* Amarillo dorado estilo Batman */
+    --text: #e5e5e5;
+    /* Gris claro para buena legibilidad */
+    --button: #22c55e;
+    /* Verde vibrante pero sobrio */
+    --hover: #1a1a1a;
+    /* Verde más profundo para hover */
+}
+
+.marvel-theme {
+    --background: #1E1E1E;
+    --header: #B30000;
+    --footer: #0D1B2A;
+    --aside: #C0C0C0;
+    --titulo: #FFD700;
+    --text: #CCCCCC;
+    --button: #0057B8;
+    --hover: #00BFFF;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#finalProject--grid {
+    display: grid;
+    grid-template-areas:
+        "header header  "
+        "aside  main    "
+        "footer footer  "
+    ;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto auto auto;
+    background-color: var(--background);
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--header);
+    height: 100px;
+}
+
+.header div {
+    align-content: center;
+    margin-right: 0.5em;
+}
+
+.header h1 {
+    justify-content: flex-start;
+    font-size: 75px;
+    color: var(--titulo);
+    margin-left: 0.5em;
+    align-content: center;
+}
+
+/*   Estilo boton toggler    */
+/* From Uiverse.io by satyamchaudharydev */
+#btnToggler {
+    border: none;
+    width: 110px;
+    height: 30px;
+    color: var(--text);
+    z-index: 1;
+    display: flex;
+    background: var(--footer);
+    position: relative;
+    cursor: pointer;
+}
+
+#btnToggler p {
+    margin: 0 auto;
+    align-self: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#btnToggler::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    z-index: -1;
+    height: 10%;
+    bottom: 0;
+    clip-path: polygon(0% 74%,
+            4% 75%,
+            8% 76%,
+            11% 77%,
+            15% 78%,
+            20% 78%,
+            25% 77%,
+            32% 77%,
+            37% 75%,
+            40% 74%,
+            43% 74%,
+            46% 73%,
+            52% 72%,
+            57% 72%,
+            65% 74%,
+            66% 75%,
+            71% 78%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    background: var(--button);
+    transition: 0.2s ease;
+}
+
+#btnToggler::before {
+    position: absolute;
+    content: "";
+    /*   bottom: 80%; */
+    transform: rotate(180deg);
+    width: 100%;
+    height: 10%;
+    transition: 0.2s ease;
+    /*   bottom:; */
+    z-index: -1;
+    clip-path: polygon(0% 74%,
+            4% 75%,
+            8% 76%,
+            11% 77%,
+            15% 78%,
+            20% 78%,
+            25% 77%,
+            32% 77%,
+            37% 75%,
+            40% 74%,
+            43% 74%,
+            46% 73%,
+            52% 72%,
+            57% 72%,
+            65% 74%,
+            66% 75%,
+            71% 78%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    background: var(--button);
+}
+
+#btnToggler:hover::after {
+    clip-path: polygon(0 30%,
+            9% 34%,
+            7% 39%,
+            11% 43%,
+            13% 33%,
+            17% 30%,
+            24% 34%,
+            25% 35%,
+            30% 31%,
+            30% 38%,
+            39% 33%,
+            35% 43%,
+            43% 45%,
+            55% 46%,
+            65% 74%,
+            67% 66%,
+            81% 57%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    height: 80%;
+}
+
+#btnToggler:hover::before {
+    clip-path: polygon(0 30%,
+            9% 34%,
+            7% 39%,
+            11% 43%,
+            13% 33%,
+            17% 30%,
+            24% 34%,
+            25% 35%,
+            30% 31%,
+            30% 38%,
+            39% 33%,
+            35% 43%,
+            43% 45%,
+            55% 46%,
+            65% 74%,
+            67% 66%,
+            81% 57%,
+            75% 82%,
+            81% 86%,
+            83% 88%,
+            88% 91%,
+            90% 94%,
+            94% 96%,
+            98% 98%,
+            100% 100%,
+            82% 100%,
+            0 100%);
+    height: 80%;
+}
+
+
+
+
+.aside {
+    grid-area: aside;
+    background-color: var(--aside);
+    display: flex;
+    flex-direction: column;
+}
+
+.aside ul li {
+    text-align: center;
+}
+
+.aside ul li:nth-child(2),
+.aside ul li:nth-child(3) {
+    border-top: 2px solid var(--hover);
+}
+
+.aside button {
+    border: 0;
+    padding: 0.5em 1.2em;
+    background-color: transparent;
+    color: var(--button);
+    font-size: 30px;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1.1em 0.2em;
+    cursor: pointer;
+}
+
+.aside button:hover {
+    color: var(--hover);
+}
+
+.main {
+    min-height: 100vh;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    background-color: var(--footer);
+    margin-top: auto;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
+
+.footer h5 {
+    font-size: 25px;
+    color: var(--text);
+}
+
+
+
+/*/* From Uiverse.io by Yaya12085 */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: royalblue;
+}
+
+.signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+}
+
+.submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
