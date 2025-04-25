@@ -132,14 +132,25 @@ btnCards.addEventListener("click", () => {
 const btnToggle = document.getElementById("btnToggler");
 const body = document.getElementById("finalProject--grid");
 
-//Creo Evento toggler
+// Verifico si hay un tema guardado en localStorage al cargar la página
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    body.classList.add(savedTheme);
+} else {
+    // Si no hay tema guardado, aplico uno por defecto
+    body.classList.add("dc-theme");
+}
+
+// Evento para alternar tema y guardar en localStorage
 btnToggle.addEventListener("click", () => {
     if (body.classList.contains("dc-theme")) {
         body.classList.remove("dc-theme");
         body.classList.add("marvel-theme");
+        localStorage.setItem("theme", "marvel-theme");
     } else {
         body.classList.remove("marvel-theme");
         body.classList.add("dc-theme");
+        localStorage.setItem("theme", "dc-theme");
     }
 })
 
