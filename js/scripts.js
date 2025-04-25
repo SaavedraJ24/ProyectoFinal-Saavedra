@@ -121,6 +121,110 @@ btnLogin.addEventListener("click", () => {
     return form;
 })
 
+// //Trabajo el form
+const form = document.querySelector(".form");
+const aside = document.querySelector(".aside");
+
+// Array vacío donde vamos a guardar el usuario
+const usuarioCreado = [];
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const inputs = document.querySelectorAll(".input");
+
+    //Map: recorremos los inputs y limpiamos los espacios
+    const values = Array.from(inputs).map(function(input) {
+         return input.value.trim();
+    });
+
+    //Some: verificamos si hay algún campo vacío
+    const hayEspaciosVacios = values.some(function(valor) {
+        return valor === "";
+    });
+
+    if (hayEspaciosVacios) {
+        alert("Es obligatorio completar los datos");
+        return;
+    }
+    //Corroboro que las contraseñas coincidan
+    const password = valores[3];
+    const confirmarPassword = valores[4];
+
+    if (password !== confirmarPassword) {
+        alert("Las contraseñas no coinciden");
+        return;
+    }
+
+    const user = {
+        name: values[0],
+        lastName: values[1],
+        email: values[2],
+        password: password,
+    };
+
+    //Guardamos el usuario en el array
+    usuarioCreado.push(user);
+
+    //Lo guardamos en localStorage
+    localStorage.setItem("usuario", JSON.stringify(usuarioCreado));
+
+    //Creamos un div para mostrar el perfil dentro del aside
+    const divPerfil = document.createElement("div");
+    divPerfil.classList.add("perfilUsuario");
+
+    //Creamos un array con los datos a mostrar
+    const datosAMostrar = [
+         "Nombre: " + user.name,
+         "Apellido: " + user.lastName,
+         "Email: " + user.email,
+    ];
+
+    // forEach: mostramos cada dato en un <p> y lo agregamos al div
+    datosAMostrar.forEach(function(dato) {
+        const p = document.createElement("p");
+        p.textContent = dato;
+        divPerfil.appendChild(p);
+    });
+
+    // Agregamos el div al aside
+    aside.appendChild(divPerfil);
+
+    //Limpiamos el formulario
+    form.reset();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Evento click de mi boton 'Cards'.
 btnCards.addEventListener("click", () => {
